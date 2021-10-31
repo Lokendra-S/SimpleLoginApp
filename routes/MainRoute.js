@@ -13,13 +13,13 @@ passport.deserializeUser(User.deserializeUser());
 const MongooseConn=require('./MongooseConn');
 const signupRoute=require('./signupRoute');
 const loginRoute=require('./loginRoute');
+const signOut=require('./Signout');
+const homeRoute=require('./homeRoute');
 
 router.use(MongooseConn);
 router.use(signupRoute);
 router.use(loginRoute);
-
-router.get('/',(req,res)=>{
-    res.render('index',{success:false});
-});
+router.use(signOut);
+router.use(homeRoute)
 
 module.exports=router;

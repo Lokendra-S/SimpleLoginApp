@@ -1,9 +1,8 @@
 const {Router}=require('express');
 router=Router();
-const isLoggedin=require('../routes/CheckUser')
 
-router.get('/',isLoggedin,(req,res)=>{
-    console.log(req.user);
+router.get('/signout',(req,res)=>{
+    req.logOut();
     res.render('index',{success:false});
 });
 

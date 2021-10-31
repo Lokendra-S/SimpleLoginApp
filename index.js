@@ -3,7 +3,7 @@ const app=express();
 const session=require('express-session');
 const path=require('path');
 
-const PORT=3000;
+const PORT=4000;
 const mainRoute=require('./routes/MainRoute');
 
 app.set('view engine', 'ejs');
